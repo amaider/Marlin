@@ -1,3 +1,38 @@
+# changed files by amaider:
+```
+Marlin
+├── Marlin
+│   ├── Configuration.h
+│   ├── Configuration_adv.h
+│   └── src
+│       └── lcd
+│           ├── dogm
+│           │   ├── dogm_Statusscreen.h
+│           │   ├── lcdprint_u8g.cpp
+│           │   └── status_screen_DOGM.cpp
+│           └── lcdprint.h
+└── platformio.ini
+```
+## git commands
+1) create Fork
+2) cd ./git
+3) git clone
+4) cd ./marlin
+5) git remote add upstream https://github.com/MarlinFirmware/Marlin.git
+## update from origin
+1) git fetch upstream       //(see branches)
+2) git pull upstream 2.0.x  //update 2.0.x branch
+## update from github
+1) git fetch
+2) git pull
+## local push
+1) git status
+2) git add
+3) git commit -m
+4) git push
+
+## ------------ end of changes ------------
+
 # Marlin 3D Printer Firmware
 
 ![GitHub](https://img.shields.io/github/license/marlinfirmware/marlin.svg)
@@ -38,8 +73,6 @@ To build Marlin 2.0 you'll need [Arduino IDE 1.8.8 or newer](https://www.arduino
   [SAMD51P20A](https://www.adafruit.com/product/4064)|ARM® Cortex-M4|Adafruit Grand Central M4
   [Teensy 3.5](https://www.pjrc.com/store/teensy35.html)|ARM® Cortex-M4|
   [Teensy 3.6](https://www.pjrc.com/store/teensy36.html)|ARM® Cortex-M4|
-  [Teensy 4.0](https://www.pjrc.com/store/teensy40.html)|ARM® Cortex-M7|
-  [Teensy 4.1](https://www.pjrc.com/store/teensy41.html)|ARM® Cortex-M7|
 
 ## Submitting Changes
 
