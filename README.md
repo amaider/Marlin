@@ -19,18 +19,18 @@ Marlin
 3) git clone
 4) cd ./marlin
 5) git remote add upstream https://github.com/MarlinFirmware/Marlin.git
-## update from origin
-1) git fetch upstream       //(see branches)
-2) git pull upstream 2.0.x  //update 2.0.x branch
-## update from github
-1) git fetch
-2) git pull
-## local push
+## update from upstream/Marlin
+1) git fetch upstream
+1.5) git merge upstream
+2) git pull upstream ?branch?
+## local push to origin/amaider
 1) git status
 2) git add
 3) git commit -m
 4) git push
-
+## update from origin/amaider
+1) git fetch
+2) git pull
 ## ------------ end of changes ------------
 
 # Marlin 3D Printer Firmware
