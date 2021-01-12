@@ -25,6 +25,8 @@ int lcd_glyph_height() { return u8g_GetFontBBXHeight(u8g.getU8g()); }
 void lcd_moveto(const lcd_uint_t col, const lcd_uint_t row) { u8g.setPrintPos(col, row); }
 
 void lcd_put_int(const int i) { u8g.print(i); }
+void lcd_put_float(const float i) { u8g.print(i); }  // amaiderchange floatprint
+void lcd_put_bool(const bool i) { u8g.print(i); }  // amaiderchange boolprint
 
 // return < 0 on error
 // return the advanced pixels

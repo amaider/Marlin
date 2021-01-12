@@ -146,6 +146,20 @@ inline void lcd_put_int(const lcd_uint_t col, const lcd_uint_t row, const int i)
   lcd_put_int(i);
 }
 
+// amaiderchange floatprint_start
+void lcd_put_float(const float i);
+inline void lcd_put_float(const lcd_uint_t col, const lcd_uint_t row, const float i) {
+  lcd_moveto(col, row);
+  lcd_put_float(i);
+}    
+
+void lcd_put_bool(const bool i);
+inline void lcd_put_bool(const lcd_uint_t col, const lcd_uint_t row, const bool i) {
+  lcd_moveto(col, row);
+  lcd_put_bool(i);
+}
+// amaiderchange floatprint_end
+
 inline int lcd_put_u8str_P(PGM_P const pstr) { return lcd_put_u8str_max_P(pstr, PIXEL_LEN_NOLIMIT); }
 inline int lcd_put_u8str_P(const lcd_uint_t col, const lcd_uint_t row, PGM_P const pstr) {
   lcd_moveto(col, row);

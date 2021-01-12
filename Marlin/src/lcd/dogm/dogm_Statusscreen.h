@@ -700,14 +700,47 @@
 //
 // Default Status Screen Bed bitmaps
 //
+// amaiderchange BLTouch Bitmap_start
+#if ENABLED(BLTOUCH)
+    #define STATUS_BLTOUCH_HEIGHT 11
+    #define STATUS_BLTOUCH_BYTEWIDTH 1
+    const unsigned char status_BLTouch_deployed_bmp[] PROGMEM = {
+      B11111110,
+      B01000100,
+      B01000100,
+      B01000100,
+      B01000100,
+      B01000100,
+      B01010100,
+      B00111000,
+      B00010000,
+      B00010000,
+      B00010000
+    };
+    const unsigned char status_BLTouch_stowed_bmp[] PROGMEM = {
+      B11111110,
+      B01000100,
+      B01000100,
+      B01010100,
+      B01010100,
+      B01010100,
+      B01010100,
+      B00111000,
+      B00000000,
+      B00000000,
+      B00000000
+    };
+#endif
+// amaiderchange BLTouch Bitmap_end
+
 #if !STATUS_BED_WIDTH && HAS_HEATED_BED && DISABLED(STATUS_COMBINE_HEATERS)
 
   #if ENABLED(STATUS_ALT_BED_BITMAP)
 
     #define STATUS_BED_ANIM
     #define STATUS_BED_WIDTH  24
-    #ifndef STATUS_BED_X
-      #define STATUS_BED_X   (LCD_PIXEL_WIDTH - (STATUS_BED_BYTEWIDTH + STATUS_CHAMBER_BYTEWIDTH + STATUS_FAN_BYTEWIDTH) * 8)
+    #ifndef STATUS_BED_X 78 // amaiderchange C
+      //#define STATUS_BED_X   (LCD_PIXEL_WIDTH - (STATUS_BED_BYTEWIDTH + STATUS_CHAMBER_BYTEWIDTH + STATUS_FAN_BYTEWIDTH) * 8) // amaiderchange D
     #endif
     #define STATUS_BED_TEXT_X (STATUS_BED_X + 11)
 
@@ -1394,7 +1427,7 @@
     #if BOTH(STATUS_COMBINE_HEATERS, HAS_HEATED_BED) && HOTENDS <= 4
       #define STATUS_HEATERS_X 5
     #else
-      #define STATUS_HEATERS_X 8 // Like the included bitmaps
+      #define STATUS_HEATERS_X 59 // Like the included bitmaps  // amaiderchange
     #endif
   #endif
 #endif

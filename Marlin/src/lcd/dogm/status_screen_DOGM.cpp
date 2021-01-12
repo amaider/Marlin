@@ -26,6 +26,7 @@
 //
 
 #include "../../inc/MarlinConfigPre.h"
+#include "../../module/planner.h" // amaiderchange esteps anzeige
 
 #if HAS_MARLINUI_U8GLIB && DISABLED(LIGHTWEIGHT_UI)
 
@@ -644,7 +645,7 @@ void MarlinUI::draw_status_screen() {
     //
     // SD Card Symbol
     //
-    if (card.isFileOpen() && PAGE_CONTAINS(42, 51)) {
+    if (card.isMounted() && PAGE_CONTAINS(42, 51)) {  // amaiderchange C
       // Upper box
       u8g.drawBox(42, 42, 8, 7);     // 42-48 (or 41-47)
       // Right edge
@@ -657,6 +658,18 @@ void MarlinUI::draw_status_screen() {
   #endif // SDSUPPORT
 
   #if HAS_PRINT_PROGRESS
+    // amaiderchange info_start
+    lcd_put_u8str_P(0, 7, PSTR("P:"));
+    lcd_put_u8str(progress_string);
+    lcd_put_wchar('%');
+    lcd_put_u8str_P(0, 17, PSTR("T:"));
+    lcd_put_u8str(elapsed_string);
+    lcd_put_u8str_P(0, 27, PSTR("R:"));
+    lcd_put_u8str(estimation_string);
+    lcd_put_u8str_P(90,49, "E");
+    lcd_put_float(planner.settings.axis_steps_per_mm[E_AXIS]);
+    // amaiderchange info_end
+    /*  //amaiderchange hide_start
     //
     // Progress bar frame
     //
@@ -723,6 +736,7 @@ void MarlinUI::draw_status_screen() {
 
       #endif // !DOGM_SD_PERCENT || !SHOW_REMAINING_TIME || !ROTATE_PROGRESS_DISPLAY
     }
+    // amaiderchange hide_end */
 
   #endif // HAS_PRINT_PROGRESS
 
