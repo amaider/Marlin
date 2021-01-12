@@ -13,25 +13,30 @@ Marlin
 │           └── lcdprint.h
 └── platformio.ini
 ```
-## git commands
+# git commands
+
+## setup environment
 1) create Fork
-2) cd ./git
-3) git clone
-4) cd ./marlin
-5) git remote add upstream https://github.com/MarlinFirmware/Marlin.git
-## update from upstream/Marlin
-1) git fetch upstream
-1.5) git merge upstream
-2) git pull upstream ?branch?
+2) ```cd ./git```
+3) ```git clone```
+4) ```cd ./marlin```
+5) ```git remote add upstream https://github.com/MarlinFirmware/Marlin.git```
+
+## update from upstream/Marlin to local
+1) ```git fetch upstream```->```git merge upstream```
+2) (```git pull upstream ?branch?```)
+
 ## local push to origin/amaider
-1) git status
-2) git add
-3) git commit -m
-4) git push
-## update from origin/amaider
-1) git fetch
-2) git pull
-## ------------ end of changes ------------
+1) ```git status```
+2) ```git add```
+3) ```git commit -m ""```
+4) ```git push```
+
+## update from origin/amaider to local
+1) ```git fetch```
+2) ```git pull```
+
+## ------------ amaider 2021 ------------
 
 # Marlin 3D Printer Firmware
 
