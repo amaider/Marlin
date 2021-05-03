@@ -7,6 +7,8 @@ Marlin
 │   └── src
 │       └── lcd
 │           ├── dogm
+│           │   ├── status
+│           │   │   └── bed.h
 │           │   ├── dogm_Statusscreen.h
 │           │   ├── lcdprint_u8g.cpp
 │           │   └── status_screen_DOGM.cpp
