@@ -669,7 +669,9 @@ void MarlinUI::draw_status_screen() {
     lcd_put_u8str_P(90,49, "E");
     lcd_put_float(planner.settings.axis_steps_per_mm[E_AXIS]);
     // amaiderchange info_end
-    /*  //amaiderchange hide_start
+
+    // amaiderchange hide_start
+    /*
     //
     // Progress bar frame
     //
@@ -736,7 +738,8 @@ void MarlinUI::draw_status_screen() {
 
       #endif // !DOGM_SD_PERCENT || !SHOW_REMAINING_TIME || !ROTATE_PROGRESS_DISPLAY
     }
-    // amaiderchange hide_end */
+    */
+    // amaiderchange hide_end
 
   #endif // HAS_PRINT_PROGRESS
 
